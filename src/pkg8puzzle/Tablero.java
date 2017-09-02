@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Tablero {
     
     private final int n = 3;
+    private int t0[][] = {{8,4,6},{5,0,7},{2,3,1}};
 
         
     public Tablero(){
@@ -134,5 +135,9 @@ public class Tablero {
             System.out.println("");
         }
         System.out.println("----------------");
+    }
+    
+    public int[][] tableroInicial(){
+        return this.t0;
     }
 }

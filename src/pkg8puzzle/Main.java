@@ -23,7 +23,7 @@ public class Main {
        
        int m[][] = {{8,4,6},{5,0,7},{2,3,1}};
        
-       ArrayList<int[][]> movs = t.getMoves(m);
+       ArrayList<int[][]> movs = t.getMoves(t.tableroInicial());
        
         for (int i = 0; i < movs.size(); i++) {
             t.imprimirTablero(movs.get(i));
