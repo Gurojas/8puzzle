@@ -20,14 +20,26 @@ public class Main {
         // TODO code application logic here
         
        Tablero t = new Tablero();
-       
-       int m[][] = {{8,4,6},{5,0,7},{2,3,1}};
-       
+          
        ArrayList<int[][]> movs = t.getMoves(t.tableroInicial());
        
+       
+       Estado e0 = new Estado(0,t.tableroInicial());
+       
+       ArrayList<Estado> estados = new ArrayList<>();
+       estados.add(e0);
+       
+       
         for (int i = 0; i < movs.size(); i++) {
-            t.imprimirTablero(movs.get(i));
+            //t.imprimirTablero(movs.get(i));
+            Estado e = new Estado(i+1,movs.get(i));
+            estados.add(e);
         }
+        
+        
+        System.out.println(estados.size());
+        
+        
         
         
     }

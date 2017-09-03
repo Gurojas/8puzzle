@@ -14,7 +14,8 @@ import java.util.ArrayList;
 public class Tablero {
     
     private final int n = 3;
-    private int t0[][] = {{8,4,6},{5,0,7},{2,3,1}};
+    private int t0[][] = {{8,0,6},{5,4,7},{2,3,1}};
+    private int tf[][] = {{0,1,2},{3,4,5},{6,7,9}};
 
         
     public Tablero(){
@@ -139,5 +140,9 @@ public class Tablero {
     
     public int[][] tableroInicial(){
         return this.t0;
+    }
+    
+     public int[][] tableroFinal(){
+        return this.tf;
     }
 }
