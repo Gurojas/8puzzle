@@ -5,9 +5,12 @@
         <group>
             <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/8Puzzle/src/pkg8puzzle/Busqueda.java</file>
             <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/8Puzzle/src/pkg8puzzle/BFS.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/8Puzzle/src/pkg8puzzle/Bag.java</file>
             <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/8Puzzle/src/pkg8puzzle/Tablero.java</file>
             <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/8Puzzle/src/pkg8puzzle/Main.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/8Puzzle/src/pkg8puzzle/Estado.java</file>
             <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/8Puzzle/src/pkg8puzzle/DFS.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/8Puzzle/src/pkg8puzzle/Grafo.java</file>
         </group>
     </open-files>
 </project-private>

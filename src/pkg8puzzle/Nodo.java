@@ -9,15 +9,17 @@ package pkg8puzzle;
  *
  * @author Usuario
  */
-public class Estado {
+public class Nodo {
     
     private int num;
     private int t[][];
+    private Bag<Integer> adj;
     
     
-    public Estado(int num, int t[][]){
+    public Nodo(int num, int t[][]){
         this.num = num;
         this.t = t;
+        this.adj = new Bag<>();
     }
 
     public int getNum() {
@@ -34,6 +36,23 @@ public class Estado {
 
     public void setT(int[][] t) {
         this.t = t;
+    }
+
+    public Bag<Integer> getAdj() {
+        return adj;
+    }
+    
+    
+    
+    /**
+     * Returns the vertices adjacent to vertex {@code v}.
+     *
+     * @param  v the vertex
+     * @return the vertices adjacent to vertex {@code v}, as an iterable
+     * @throws IllegalArgumentException unless {@code 0 <= v < V}
+     */
+    public Iterable<Integer> adj() {
+        return adj;
     }
     
     

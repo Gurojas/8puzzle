@@ -13,7 +13,7 @@ public class Grafo {
     
     private final int V;
     private int E;
-    private Bag<Integer>[] adj;
+    private Nodo[] nodo;
     
     /**
      * Initializes an empty graph with {@code V} vertices and 0 edges.
@@ -26,11 +26,46 @@ public class Grafo {
         if (V < 0) throw new IllegalArgumentException("Number of vertices must be nonnegative");
         this.V = V;
         this.E = 0;
-        adj = (Bag<Integer>[]) new Bag[V];
-        for (int v = 0; v < V; v++) {
-            adj[v] = new Bag<Integer>();
-        }
+        nodo = new Nodo[V];
+        
     }
+    
+     /**
+     * Returns the number of vertices in this graph.
+     *
+     * @return the number of vertices in this graph
+     */
+    public int V() {
+        return V;
+    }
+
+    /**
+     * Returns the number of edges in this graph.
+     *
+     * @return the number of edges in this graph
+     */
+    public int E() {
+        return E;
+    }
+    /*
+    /**
+     * Adds the undirected edge v-w to this graph.
+     *
+     * @param  v one vertex in the edge
+     * @param  w the other vertex in the edge
+     * @throws IllegalArgumentException unless both {@code 0 <= v < V} and {@code 0 <= w < V}
+     */
+    public void addEdge(int v, Nodo e) {
+        E++;
+        //adj[v].add(e);
+    }
+    
+    
+    
+    
+    
+    
+
 
     
     

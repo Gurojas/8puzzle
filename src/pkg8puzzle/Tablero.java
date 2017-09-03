@@ -15,8 +15,8 @@ public class Tablero {
     
     private final int n = 3;
     private int t0[][] = {{8,0,6},{5,4,7},{2,3,1}};
-    private int tf[][] = {{0,1,2},{3,4,5},{6,7,9}};
-
+    //private int tf[][] = {{0,1,2},{3,4,5},{6,7,9}};
+    private int tf[][] = {{8,4,6},{5,0,7},{2,3,1}};
         
     public Tablero(){
         
@@ -142,7 +142,20 @@ public class Tablero {
         return this.t0;
     }
     
-     public int[][] tableroFinal(){
+    public int[][] tableroFinal(){
         return this.tf;
     }
+    
+    public boolean esFinal(int t[][]){
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (tf[i][j] != t[i][j]){
+                    return false;
+                }
+            }
+        }     
+        return true;
+    }
+     
+     
 }
