@@ -16,16 +16,16 @@ public class Nodo {
     
     
     
-    public Nodo(int num, int t[][]){
-        this.padre = num;
+    public Nodo(int t[][]){
+        this.padre = 0;
         this.estado = t;
     }
 
-    public int getNum() {
+    public int getPadre() {
         return padre;
     }
 
-    public void setNum(int num) {
+    public void setPadre(int num) {
         this.padre = num;
     }
 
