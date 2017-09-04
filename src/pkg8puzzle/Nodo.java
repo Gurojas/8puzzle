@@ -11,21 +11,22 @@ package pkg8puzzle;
  */
 public class Nodo {
     
-    private int num;
+    private int padre;
     private int[][] estado;
     
     
+    
     public Nodo(int num, int t[][]){
-        this.num = num;
+        this.padre = num;
         this.estado = t;
     }
 
     public int getNum() {
-        return num;
+        return padre;
     }
 
     public void setNum(int num) {
-        this.num = num;
+        this.padre = num;
     }
 
     public int[][] getT() {
@@ -37,7 +38,4 @@ public class Nodo {
     }
     
    
-    
-    
-    
 }
