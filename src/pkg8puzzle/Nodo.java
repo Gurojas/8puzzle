@@ -12,14 +12,12 @@ package pkg8puzzle;
 public class Nodo {
     
     private int num;
-    private int t[][];
-    private Bag<Integer> adj;
+    private int[][] estado;
     
     
     public Nodo(int num, int t[][]){
         this.num = num;
-        this.t = t;
-        this.adj = new Bag<>();
+        this.estado = t;
     }
 
     public int getNum() {
@@ -31,29 +29,14 @@ public class Nodo {
     }
 
     public int[][] getT() {
-        return t;
+        return estado;
     }
 
     public void setT(int[][] t) {
-        this.t = t;
-    }
-
-    public Bag<Integer> getAdj() {
-        return adj;
+        this.estado = t;
     }
     
-    
-    
-    /**
-     * Returns the vertices adjacent to vertex {@code v}.
-     *
-     * @param  v the vertex
-     * @return the vertices adjacent to vertex {@code v}, as an iterable
-     * @throws IllegalArgumentException unless {@code 0 <= v < V}
-     */
-    public Iterable<Integer> adj() {
-        return adj;
-    }
+   
     
     
     

@@ -7,6 +7,7 @@ package pkg8puzzle;
 
 import java.util.ArrayList;
 
+
 /**
  *
  * @author Usuario
@@ -20,37 +21,27 @@ public class Main {
         // TODO code application logic here
         
        Tablero t = new Tablero();
-          
-       int m[][] = {{8,0,6},{5,4,7},{2,3,1}};
        
-       int m1[][] = {{8,4,6},{5,0,7},{2,3,1}};
+       Grafo g = new Grafo(10);
        
-       Nodo e = new Nodo(0,m);
-       e.getAdj().add(1);
-       e.getAdj().add(2);
+       Nodo root = new Nodo(0,t.tableroInicial());
+       g.addEdge(root.getNum(), root);
        
-        for (int i : e.adj()) {
-            System.out.println(i);
+        for (int i = 0; i < g.V(); i++) {
+            Nodo n = g.getNodo(i);
+            if (n != null){
+                ArrayList<int[][]> movs = t.getMoves(n.getT());
+                for (int j = 0; j < movs.size(); j++) {
+                    t.imprimirTablero(movs.get(j));
+                    n.getAdj().add(j+1);
+                    Nodo ni = new Nodo(j+1,movs.get(j)); 
+                    g.addEdge(ni.getNum(), ni);
+                }
+            }
+            
         }
-       
-       
-       
-       
-        
-       
-       
-      
-                
-       
-       
-      
-       
-       
-        
-        
-        
-        
-        
+          
+
     }
     
     

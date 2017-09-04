@@ -58,7 +58,9 @@ public class Bag<Item> implements Iterable<Item> {
         Node<Item> oldfirst = first;
         first = new Node<Item>();
         first.item = item;
-        first.next = oldfirst;
+        //first.next = oldfirst;
+        oldfirst.next = first;
+        first = oldfirst;
         n++;
     }
 

@@ -13,7 +13,7 @@ public class Grafo {
     
     private final int V;
     private int E;
-    private Nodo[] nodo;
+    private Nodo nodos[];
     
     /**
      * Initializes an empty graph with {@code V} vertices and 0 edges.
@@ -26,8 +26,7 @@ public class Grafo {
         if (V < 0) throw new IllegalArgumentException("Number of vertices must be nonnegative");
         this.V = V;
         this.E = 0;
-        nodo = new Nodo[V];
-        
+        nodos = new Nodo[V];
     }
     
      /**
@@ -55,9 +54,15 @@ public class Grafo {
      * @param  w the other vertex in the edge
      * @throws IllegalArgumentException unless both {@code 0 <= v < V} and {@code 0 <= w < V}
      */
-    public void addEdge(int v, Nodo e) {
+    public void addEdge(int v, Nodo nodo) {
         E++;
         //adj[v].add(e);
+        nodos[v] = nodo;
+        
+    }
+    
+    public Nodo getNodo(int v){
+        return nodos[v];
     }
     
     
