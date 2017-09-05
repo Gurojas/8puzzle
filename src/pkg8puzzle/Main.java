@@ -20,8 +20,11 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Tablero t = new Tablero();
-        Grafo g = new Grafo(10);
+        
+        /* Inicializo un objeto de la clase Tablero, el cual tendra el estado inicial y final */
+        Tablero t = new Tablero(); 
+        /* Inicializo el grafo */
+        Grafo g = new Grafo();
         Nodo raiz = new Nodo(t.tableroInicial());
         
         
@@ -54,6 +57,8 @@ public class Main {
                 ArrayList<int [][]> movs = t.getMoves(n.getT());
                 for (int i = 0; i < movs.size(); i++) {
                     
+                    n.addHijos(pos);
+                    
                     Nodo hijo = new Nodo(movs.get(i));
                     System.out.println("Hijos de "+padre);
                     System.out.println(pos); 
@@ -67,35 +72,14 @@ public class Main {
                         solucion = true;
                         break;
                     }
-                    
                 }
             }    
             padre++;
-             
-            /*
-            ArrayList<int [][]> movs = t.getMoves(n.getT());
-            for (int i = 0; i < movs.size(); i++) {
-                Nodo hijo = new Nodo(movs.get(i));
-                hijo.setPadre(padre); 
-                g.addEdge(pos, hijo);
-                pos = pos + 1;
-                        
-            }
-            padre++;
-            */
         }
         
-        /*
-        int i = 5;
-        Nodo nodo = g.getNodo(i);
-        i = g.getNodo(i).getPadre();
-        while (i != -1){
-            System.out.println(i);
-            t.imprimirTablero(g.getNodo(i).getT());
-            System.out.println(Busqueda.hayRepeticion(nodo.getT(), g.getNodo(i).getT()));
-            i = g.getNodo(i).getPadre(); 
-        }
-                */
+        BFS bfs = new BFS(g,0);
+        
+        
 
     }
     

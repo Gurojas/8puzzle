@@ -5,6 +5,8 @@
  */
 package pkg8puzzle;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Usuario
@@ -13,12 +15,13 @@ public class Nodo {
     
     private int padre;
     private int[][] estado;
-    
-    
+    private ArrayList<Integer> hijos;
+
     
     public Nodo(int t[][]){
         this.padre = 0;
         this.estado = t;
+        this.hijos = new ArrayList<>();
     }
 
     public int getPadre() {
@@ -37,5 +40,16 @@ public class Nodo {
         this.estado = t;
     }
     
+    public void addHijos(int h){
+        this.hijos.add(h);
+    }
+    
+    public int getHijo(int i){
+        return this.hijos.get(i);
+    }
+    
+    public int numHijos(){
+        return this.hijos.size();
+    }
    
 }
