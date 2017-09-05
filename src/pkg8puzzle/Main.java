@@ -21,7 +21,7 @@ public class Main {
         // TODO code application logic here
         
         Tablero t = new Tablero();
-        Grafo g = new Grafo(10);
+        Grafo g = new Grafo();
         Nodo raiz = new Nodo(t.tableroInicial());
         
         
@@ -55,9 +55,9 @@ public class Main {
                 for (int i = 0; i < movs.size(); i++) {
                     
                     Nodo hijo = new Nodo(movs.get(i));
-                    System.out.println("Hijos de "+padre);
-                    System.out.println(pos); 
-                    t.imprimirTablero(hijo.getT());
+                    //System.out.println("Hijos de "+padre);
+                    //System.out.println(pos); 
+                    //t.imprimirTablero(hijo.getT());
                     hijo.setPadre(padre); 
                     g.addEdge(pos, hijo);
                     pos = pos + 1;
@@ -84,6 +84,8 @@ public class Main {
             padre++;
             */
         }
+        
+        System.out.println(g.V());
         
         /*
         int i = 5;

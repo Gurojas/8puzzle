@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Grafo {
     
-    private final int V;
+    private int V;
     private int E;
     //private Nodo nodos[];
     private ArrayList<Nodo> nodos;
@@ -25,9 +25,9 @@ public class Grafo {
      * @param  V number of vertices
      * @throws IllegalArgumentException if {@code V < 0}
      */
-    public Grafo(int V) {
-        if (V < 0) throw new IllegalArgumentException("Number of vertices must be nonnegative");
-        this.V = V;
+    public Grafo() {
+        
+        this.V = 0;
         this.E = 0;
         //nodos = new Nodo[V];
         nodos = new ArrayList<>();
@@ -63,6 +63,7 @@ public class Grafo {
         //adj[v].add(e);
         //nodos[v] = nodo;
         nodos.add(nodo);
+        V++;
         
     }
     
