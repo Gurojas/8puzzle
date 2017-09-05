@@ -5,6 +5,8 @@
  */
 package pkg8puzzle;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Usuario
@@ -13,7 +15,8 @@ public class Grafo {
     
     private final int V;
     private int E;
-    private Nodo nodos[];
+    //private Nodo nodos[];
+    private ArrayList<Nodo> nodos;
     
     /**
      * Initializes an empty graph with {@code V} vertices and 0 edges.
@@ -26,7 +29,8 @@ public class Grafo {
         if (V < 0) throw new IllegalArgumentException("Number of vertices must be nonnegative");
         this.V = V;
         this.E = 0;
-        nodos = new Nodo[V];
+        //nodos = new Nodo[V];
+        nodos = new ArrayList<>();
     }
     
      /**
@@ -57,12 +61,14 @@ public class Grafo {
     public void addEdge(int v, Nodo nodo) {
         E++;
         //adj[v].add(e);
-        nodos[v] = nodo;
+        //nodos[v] = nodo;
+        nodos.add(nodo);
         
     }
     
     public Nodo getNodo(int v){
-        return nodos[v];
+        //return nodos[v];
+        return nodos.get(v);
     }
     
     

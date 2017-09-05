@@ -11,4 +11,17 @@ package pkg8puzzle;
  */
 public class Busqueda {
     
+    
+    
+    public static boolean hayRepeticion(int m[][], int n[][]){
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < n.length; j++) {
+                if (m[i][j] != n[i][j]){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
 }
