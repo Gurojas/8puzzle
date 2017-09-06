@@ -14,48 +14,71 @@ public class BFS {
     private boolean marked[];
     private int distTo[];
     private int edgeTo[];
+    private Tablero tablero;
+    
+    private int sol;
+    private int total;
     
     
     public BFS(Grafo g, int s){
+        
+        
         this.marked = new boolean[g.V()];
         this.distTo = new int[g.V()];
         this.edgeTo = new int[g.V()];
         this.marked = new boolean[g.V()];
-        bfs(g,s);
         
         
+        this.tablero = new Tablero();
         
-        for (int i = 0; i < this.edgeTo.length; i++) {
-            System.out.println(this.edgeTo[i]);
+        this.bfs(g, s);
+        
+        System.out.println("------- BFS --------");
+        
+        System.out.println("Numero de nodos recorridos: "+this.sol);
+        System.out.println("Numero de nodos desde la raiz hasta la solucion: "+this.distTo[this.sol]);
+        
+        
+        System.out.println("----- Camino de la solucion ------");
+        
+        while (sol != -1){
+            Nodo n = g.getNodo(sol);
+            System.out.println("Nodo "+sol);
+            tablero.imprimirTablero(n.getT());
+            sol = edgeTo[sol];
         }
-                
-
+        
+        
         
     }
+
     
     private void bfs(Grafo g, int s){
-        Queue<Integer> q = new Queue<>();
-        q.enqueue(s);
+        Queue<Integer> queue = new Queue<>();
+        queue.enqueue(s);
         
         marked[s] = true;
         distTo[s] = 0;
+        edgeTo[s] = -1;
         
-        
-        while(!q.isEmpty()){
-            int v = q.dequeue();
+        while(!queue.isEmpty()){
+            int v = queue.dequeue();
             Nodo nodo = g.getNodo(v);
             for (int h = 0; h < nodo.numHijos(); h++) {
                 int hijo = nodo.getHijo(h);
                 if (!marked[hijo]){
-                    q.enqueue(hijo);
+                    queue.enqueue(hijo);
                     marked[hijo] = true;
                     edgeTo[hijo] = v;
                     distTo[hijo] = distTo[v] + 1;
+                    Nodo n = g.getNodo(hijo);
+                    if (tablero.esFinal(n.getT())){
+                        this.sol = hijo;
+                        return;
+                    }
                 }
             }
-        }    
-    }
-    
-    
+        }   
+    }    
 }
 

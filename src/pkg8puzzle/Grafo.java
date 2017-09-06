@@ -26,10 +26,7 @@ public class Grafo {
      * @throws IllegalArgumentException if {@code V < 0}
      */
     public Grafo() {
-<<<<<<< HEAD
-        
-=======
->>>>>>> testBFS
+
         this.V = 0;
         this.E = 0;
         //nodos = new Nodo[V];

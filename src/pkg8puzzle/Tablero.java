@@ -14,38 +14,17 @@ import java.util.ArrayList;
 public class Tablero {
     
     private final int n = 3;
-    private int t0[][] = {{8,0,6},{5,4,7},{2,3,1}};
-   // private int t0[][] = {{2,8,3},{1,6,4},{7,0,5}};
-    //private int tf[][] = {{1,2,3},{8,0,4},{7,6,5}};
-    private int tf[][] = {{8,6,7},{5,4,0},{2,3,1}};
-    //private int tf[][] = {{8,4,6},{5,0,7},{2,3,1}};
+    //private int t0[][] = {{8,0,6},{5,4,7},{2,3,1}};
+    //private int tf[][] = {{8,6,7},{5,4,0},{2,3,1}};
+    
+    private int t0[][] = {{2,8,3},{1,6,4},{7,0,5}};
+    private int tf[][] = {{1,2,3},{8,0,4},{7,6,5}};
+
         
     public Tablero(){
         
     }
     
-    /*
-    public int numMovs(int t[][]){
-        int i0 = this.i0(t);
-        int j0 = this.j0(t);
-        
-        int movs = 0;
-        
-        if (i0 == 1 && j0 == 1){
-            movs = 4;
-        }
-        else if (i0 == 0 && j0 == 0 || i0 == 0 && j0 == n-1 || i0 == n-1 && j0 == 0 || i0 == n-1 && j0 == n-1){
-            movs = 2;
-        }
-        else{
-            movs = 3;
-        }
-        
-        
-        return movs;
-        
-    }
-    */
     
     
     private int[][] clonar(int t[][]){

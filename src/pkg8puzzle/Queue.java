@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
 
 /**
  *
- * @author Usuario
+ * @author Internet
  */
 public class Queue<Item> implements Iterable<Item> {
     private Node<Item> first;    // beginning of queue
